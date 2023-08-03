@@ -1,0 +1,36 @@
+{
+    "root": true,
+    "extends": [
+        "@nuxtjs/eslint-config-typescript",
+        "plugin:tailwindcss/recommended"
+    ],
+    "rules": {
+        "eqeqeq": ["error", "always"],
+        "curly": "error",
+        "quotes": ["error", "double"],
+        "semi": ["error", "always"],
+        "brace-style": ["error", "stroustrup"],
+        "eol-last": ["error", "never"],
+        "no-console": ["warn", { "allow": ["warn", "error"] }],
+        "indent": ["error", 4, { "SwitchCase": 1 }],
+        "vue/html-indent": ["error", 4, {"baseIndent": 1 }],
+        "vue/script-indent": ["error", 4, {"baseIndent": 1, "switchCase": 1 }],
+        "vue/multi-word-component-names": "off",
+        "vue/no-lone-template": [
+            "error",
+            {
+                "ignoreAccessible": true
+            }
+        ],
+        "tailwindcss/no-custom-classname": "off",
+        "vue/attribute-hyphenation": "off"
+    },
+    "overrides": [
+        {
+            "files": ["*.vue"],
+            "rules": {
+                "indent": "off"
+            }
+        }
+    ]
+}
