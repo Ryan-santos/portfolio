@@ -8,7 +8,7 @@
         src: url("/fonts/arkhip.ttf") format("truetype");
     }
 
-    html {
+    * {
         @apply
             scroll-smooth
             scroll-mt-40

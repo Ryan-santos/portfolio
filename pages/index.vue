@@ -79,7 +79,7 @@
                         leaveFromClass="grid grid-cols-[1fr] grid-rows-[1fr] opacity-100"
                         leaveToClass="grid grid-cols-[0fr] grid-rows-[0fr] opacity-0"
                     >
-                        <div v-show="knowledge.open" class="transition-all duration-500">
+                        <div v-show="knowledge.open" ref="knowledgeInfo" class="transition-all duration-500">
                             <div class="clip_path w-full justify-items-start overflow-hidden bg-background-100 p-4 text-center [--clip:1.5rem] sm:p-8 lg:max-w-screen-sm lg:text-left">
                                 <div class="mb-8 flex flex-row items-center justify-center gap-6 lg:justify-start">
                                     <Icon :name="knowledge.items[knowledge.activated!]?.icon" size="4rem" />
@@ -229,6 +229,7 @@
         ) {}
     }
 
+    const knowledgeInfo = ref<HTMLDivElement>();
     const knowledge = ref({
         open: false,
         activated: 0,
@@ -336,7 +337,7 @@
             else {
                 this.open = true;
                 this.activated = item;
-                window.location.href = "#experiencias";
+                knowledgeInfo.value?.scrollIntoView();
             }
         }
     });
