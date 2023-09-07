@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: "arkhip";
+        src: url("/fonts/arkhip.ttf") format("truetype");
+    }
+
+    * {
+        @apply
+            scroll-smooth
+            scroll-mt-40
+        ;
+    }
+
+    body {
+        @apply
+            bg-background
+            text-contrast
+            text-base
+            text-center
+            sm:text-left
+            antialiased
+            transition-[background-color]
+            scrollbar
+        ;
+    }
+    
+    *::selection {
+        @apply text-white bg-primary
+    }
+
+    h1 {
+        @apply sm:text-4xl
+    }
+
+    h1, h2 {
+        @apply text-3xl;
+    }
+
+    h3 {
+        @apply text-2xl;
+    }
+
+    h4 {
+        @apply text-xl;
+    }
+
+    h5 {
+        @apply text-lg;
+    }
+
+    h6, p {
+        @apply text-base;
+    }
+
+    button,
+    a {
+        @apply select-none;
+    }
+
+    a.link {
+        @apply underline underline-offset-4 transition-all duration-300 hover:text-primary;
+    }
+
+    button:disabled {
+        @apply opacity-60;
+    }
+
+    hr {
+        @apply border-t border-current opacity-20
+    }
+}
+
+@layer components {
+    .scrollbar {
+        scrollbar-width: thin;
+    }
+
+    .scrollbar::-webkit-scrollbar-track {
+        @apply bg-background-100;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+        @apply rounded-full border-4 border-solid hover:!bg-primary;
+    }
+    
+    .scrollbar:not(.scrollbar-white, scrollbar-black)::-webkit-scrollbar-thumb {
+        @apply bg-primary border-background-100;
+        scrollbar-color: theme(colors.contrast) initial;
+    }
+
+    .scrollbar.scrollbar-white::-webkit-scrollbar-thumb {
+        @apply bg-white-100 border-black;
+        scrollbar-color: theme(colors.white.DEFAULT) initial;
+    }
+
+    .scrollbar.scrollbar-black::-webkit-scrollbar-thumb {
+        @apply bg-black border-white;
+        scrollbar-color: theme(colors.black.DEFAULT) initial;
+    }
+
+    .scrollbar::-webkit-scrollbar {
+        @apply h-6 w-3;
+    }
+}
+
+@layer utilities {
+    .no_scrollbar::-webkit-scrollbar {
+        @apply hidden;
+    }
+
+    .no_scrollbar {
+        scrollbar-width: none;
+    }
+
+    .clip_path {
+        --clip: 1rem;
+        --clip-left: var(--clip);
+        --clip-right: calc(100% - var(--clip));
+
+        clip-path: polygon(
+            0% var(--clip-left),
+            var(--clip-left) 0,
+            100% 0,
+            100% var(--clip-right),
+            var(--clip-right) 100%,
+            0 100%
+        );
+    }
+
+    .mask-transparent {
+        --deg: 180deg;
+        --percentage: 75%;
+        --percentageT: 100%;
+
+        -webkit-mask-image: linear-gradient(var(--deg), #000 var(--percentage), transparent var(--percentageT));
+        mask-image: linear-gradient(var(--deg), #000 var(--percentage), transparent var(--percentageT));
+    }
+}
+
+.page-enter-active,
+.page-leave-active {
+    @apply transition-all duration-200
+}
+
+.page-enter-from,
+.page-leave-to {
+    @apply opacity-0 blur-md translate-y-8
+}
