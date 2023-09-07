@@ -27,7 +27,12 @@ export default defineNuxtConfig({
         }
     },
 
+    typescript: {
+        strict: true
+    },
+
     modules: [
+        "nuxt-gtag",
         "@nuxtjs/tailwindcss",
         "nuxt-icon",
         "@nuxtjs/google-fonts",
@@ -36,8 +41,8 @@ export default defineNuxtConfig({
         "nuxt-lodash"
     ],
 
-    typescript: {
-        strict: true
+    gtag: {
+        id: "G-TSXEY9CR96"
     },
 
     googleFonts: {
