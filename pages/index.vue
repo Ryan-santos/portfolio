@@ -1,18 +1,10 @@
 <template>
     <div class="overflow-hidden">
-        <NavBar />
-
         <section id="inicio" class="relative flex h-full min-h-screen flex-row items-center" containerAnime>
             <div class="absolute inset-0 -z-10">
                 <div class="absolute left-0 top-0 h-[10vw] w-[10vw] bg-primary" anime />
                 <div class="absolute bottom-0 right-0 h-[10vw] w-[10vw] bg-primary" anime />
                 <div class="absolute inset-0 z-10 h-[200%] backdrop-blur-[300px]" />
-                <span anime>
-                    <Circles class="left-0 top-0 z-20 -translate-x-1/2 -translate-y-1/2" />
-                </span>
-                <span anime>
-                    <Circles class="bottom-0 right-0 z-20 translate-x-1/2 translate-y-1/2" />
-                </span>
             </div>
             <article class="container relative flex h-full flex-row items-center justify-center gap-12 pt-12 text-center">
                 <div class="max-w-screen-md">
@@ -23,12 +15,13 @@
                     <p class="mb-8" anime>
                         Estou aqui para ajudar você a criar produtos digitais incríveis. Vamos trabalhar juntos e construir algo verdadeiramente extraordinário! 😊
                     </p>
-                    <div anime>
-                        <a href="#quem-sou">
-                            <Button>
-                                Quem sou
-                            </Button>
-                        </a>
+                    <div class="grid auto-cols-auto grid-flow-col justify-center gap-8" anime>
+                        <Button href="#quem-sou">
+                            Quem sou
+                        </Button>
+                        <Button :href="linkContato" color="outline">
+                            Entrar em contato
+                        </Button>
                     </div>
                 </div>
             </article>
@@ -65,7 +58,7 @@
                 <SuperTitle
                     aboveTitle="Conhecimentos"
                     title="Explorando meus conhecimentos"
-                    class="mx-auto mb-6 max-w-screen-sm text-center"
+                    class="mx-auto mb-6 max-w-screen-md text-center"
                     anime
                 />
                 <p class="mb-12 text-center" anime>
@@ -156,7 +149,7 @@
                 <SuperTitle
                     aboveTitle="Projetos"
                     title="Demonstrando Minhas Habilidades"
-                    class="mx-auto mb-12 max-w-screen-sm text-center"
+                    class="mx-auto mb-12 max-w-screen-md text-center"
                     anime
                 />
                 <div v-if="false" class="grid h-fit w-full grid-cols-3 gap-12">
@@ -206,17 +199,17 @@
                 <SuperTitle class="mb-12" anime>
                     Eai? Vamos tirar esse projeto do papel?
                 </SuperTitle>
-                <a href="mailto:ryandossantosfelix22@gmail.com" target="_blank" rel="noopener noreferrer" anime>
-                    <Button color="white">
-                        Entrar em contato
-                    </Button>
-                </a>
+                <Button :href="linkContato" color="white" anime>
+                    Entrar em contato
+                </Button>
             </div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
+    const linkContato = "mailto:ryandossantosfelix22@gmail.com";
+
     class KnowledgeItem {
         // eslint-disable-next-line no-useless-constructor
         constructor (
@@ -337,6 +330,9 @@
             else {
                 this.open = true;
                 this.activated = item;
+            }
+
+            if (this.open) {
                 knowledgeInfo.value?.scrollIntoView();
             }
         }

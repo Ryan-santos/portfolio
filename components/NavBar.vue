@@ -8,12 +8,14 @@
             <div class="flex flex-col items-center justify-center border-b py-3 lg:flex-row" :class="!navbar.transparent ? 'border-contrast/10' : 'border-transparent'">
                 <div class="flex w-full flex-row items-center justify-between lg:w-fit">
                     <a href="#" class="group w-[10rem]" anime @mouseenter="logo.toggleDirection()" @mouseleave="logo.toggleDirection()">
-                        <Vue3Lottie
-                            ref="lottieLogo"
-                            animationLink="/lottie/logo.json"
-                            :loop="false"
-                            class="logo"
-                        />
+                        <ClientOnly>
+                            <Vue3Lottie
+                                ref="lottieLogo"
+                                animationLink="/lottie/logo.json"
+                                :loop="false"
+                                class="logo"
+                            />
+                        </ClientOnly>
                     </a>
                     <button class="relative h-10 w-10 lg:hidden" :class="{'text-red-600': navbar.open}" @click="navbar.toggle()">
                         <div class="absolute left-1/2 top-1/2 block w-6 -translate-x-1/2 -translate-y-1/2">
@@ -113,8 +115,6 @@
                 navbar.value.transparent = window.scrollY > 0;
             }
         }, 100));
-
-        logo.value.play();
 
         setTimeout(() => {
             logo.value.toggleDirection();

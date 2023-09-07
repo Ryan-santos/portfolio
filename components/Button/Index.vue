@@ -1,11 +1,14 @@
 <template>
-    <button
+    <component
+        :is="href ? NuxtLink : 'button'"
+        :href="href"
         class="
             after:clip_path
             before:clip_path
 
             group/button
             relative
+            inline-block
             select-none
             text-lg
             font-semibold
@@ -37,18 +40,22 @@
         <span class="relative z-10">
             <slot />
         </span>
-    </button>
+    </component>
 </template>
 
 <script setup lang="ts">
+    import { NuxtLink } from "#components";
+
     const props = withDefaults(defineProps<{
         color?: "primary" | "secondary" | "white" | "outline" | "custom"
         noPadding?: boolean
         activated?: boolean
+        href?: string
     }>(), {
         color: "primary",
         noPadding: false,
-        activated: false
+        activated: false,
+        href: ""
     });
 
     const _color = computed(() => {
