@@ -1,5 +1,9 @@
 <template>
     <main>
+        <Head>
+            <Meta name="color-scheme" :content="`only ${$colorMode.preference}`" />
+        </Head>
+
         <NavBar />
 
         <NuxtPage />
