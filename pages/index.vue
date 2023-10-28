@@ -3,8 +3,8 @@
         <section id="inicio" class="relative flex h-full min-h-screen flex-row items-center" containerAnime>
             <div class="absolute inset-0 -z-10">
                 <div class="absolute left-0 top-0 h-[10vw] w-[10vw] bg-primary" anime />
-                <div class="absolute bottom-0 right-0 h-[10vw] w-[10vw] bg-primary" anime />
-                <div class="absolute inset-0 z-10 h-[200%] backdrop-blur-[300px]" />
+                <div class="absolute bottom-0 right-0 hidden h-[10vw] w-[10vw] bg-primary sm:block" anime />
+                <div class="absolute inset-0 z-10 h-full backdrop-blur-[300px] sm:h-[200%]" />
             </div>
             <article class="container relative flex h-full flex-row items-center justify-center gap-12 pt-12 text-center">
                 <div class="max-w-screen-md">
@@ -119,7 +119,7 @@
                             </div>
                         </div>
                     </Transition>
-                    <div class="grid h-fit w-full gap-12 xs:grid-cols-2 md:grid-cols-3" :class="knowledge.open ? 'lg:grid-cols-3 2xl:grid-cols-4' : 'lg:grid-cols-4 2xl:grid-cols-5'">
+                    <div class="grid h-fit w-full grid-cols-2 gap-12 md:grid-cols-3" :class="knowledge.open ? 'lg:grid-cols-3 2xl:grid-cols-4' : 'lg:grid-cols-4 2xl:grid-cols-5'">
                         <div
                             v-for="value, key in knowledge.items"
                             :key="key"
@@ -152,44 +152,37 @@
                     class="mx-auto mb-12 max-w-screen-md text-center"
                     anime
                 />
-                <div v-if="false" class="grid h-fit w-full grid-cols-3 gap-12">
+                <div class="flex h-fit w-full justify-center gap-12">
                     <Button
-                        v-for="value, key in 3"
-                        :key="key"
+                        href="https://dudomon.com"
+                        target="_blank"
                         color="secondary"
-                        class="relative flex flex-col items-center !p-0 before:[--clip:2rem] after:[--clip:2rem]"
+                        class="relative flex max-w-md flex-col items-center !p-0 text-center before:[--clip:2rem] after:[--clip:2rem]"
                         anime
                     >
                         <div class="p-4">
-                            <img src="/images/projects/super-controller.jpg" alt="" class="clip_path [--clip:2rem]">
+                            <img src="/images/projects/dudomon.jpg" alt="" class="clip_path [--clip:2rem]">
                         </div>
                         <div class="p-4">
                             <span class="text-sm opacity-50">
                                 nome
                             </span>
-                            <h3 class="mb-6 capitalize">
-                                Super Controller
-                            </h3>
+                            <h1 class="mb-6 font-bold capitalize">
+                                Dudomon
+                            </h1>
                             <span class="text-sm opacity-50">
                                 tecnologias
                             </span>
                             <div class="flex flex-row justify-center gap-4">
-                                <Icon name="vscode-icons:file-type-vue" size="2rem" />
                                 <Icon name="vscode-icons:file-type-nuxt" size="2rem" />
+                                <Icon name="vscode-icons:file-type-vue" size="2rem" />
                                 <Icon name="vscode-icons:file-type-typescript-official" size="2rem" />
                                 <Icon name="devicon:tailwindcss" size="2rem" />
+                                <Icon name="devicon:supabase" size="2rem" />
+                                <Icon name="devicon:nodejs" size="2rem" />
                             </div>
                         </div>
                     </Button>
-                </div>
-                <div v-else class="clip_path mx-auto w-full max-w-screen-xs bg-background-100 text-center [--clip:2rem]" anime>
-                    <h4 class="p-8">
-                        Estou finalizando os preparativos para a demonstração final de meus projetos.
-                    </h4>
-                    <Lottie name="organizing" class="!-mt-48 w-full" />
-                    <h4 class="p-8">
-                        Estou animado para compartilhá-los com o mundo :)
-                    </h4>
                 </div>
             </article>
         </section>
