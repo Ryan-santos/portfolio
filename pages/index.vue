@@ -3,8 +3,8 @@
         <section id="inicio" class="relative flex h-full min-h-screen flex-row items-center" containerAnime>
             <div class="absolute inset-0 -z-10">
                 <div class="absolute left-0 top-0 h-[10vw] w-[10vw] bg-primary" anime />
-                <div class="absolute bottom-0 right-0 h-[10vw] w-[10vw] bg-primary" anime />
-                <div class="absolute inset-0 z-10 h-[200%] backdrop-blur-[300px]" />
+                <div class="absolute bottom-0 right-0 hidden h-[10vw] w-[10vw] bg-primary sm:block" anime />
+                <div class="absolute inset-0 z-10 h-full backdrop-blur-[300px] sm:h-[200%]" />
             </div>
             <article class="container relative flex h-full flex-row items-center justify-center gap-12 pt-12 text-center">
                 <div class="max-w-screen-md">
@@ -119,7 +119,7 @@
                             </div>
                         </div>
                     </Transition>
-                    <div class="grid h-fit w-full gap-12 xs:grid-cols-2 md:grid-cols-3" :class="knowledge.open ? 'lg:grid-cols-3 2xl:grid-cols-4' : 'lg:grid-cols-4 2xl:grid-cols-5'">
+                    <div class="grid h-fit w-full grid-cols-2 gap-12 md:grid-cols-3" :class="knowledge.open ? 'lg:grid-cols-3 2xl:grid-cols-4' : 'lg:grid-cols-4 2xl:grid-cols-5'">
                         <div
                             v-for="value, key in knowledge.items"
                             :key="key"
