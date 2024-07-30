@@ -95,7 +95,12 @@
                                 <p class="mb-8">
                                     {{ knowledge.items[knowledge.activated!]?.description }}
                                     <br><br>
-                                    <a :href="knowledge.items[knowledge.activated!]?.link" target="_blank" class="link">
+                                    <a
+                                        v-if="knowledge.items[knowledge.activated!]?.link"
+                                        :href="knowledge.items[knowledge.activated!]?.link"
+                                        target="_blank"
+                                        class="link inline-flex flex-row items-center gap-1"
+                                    >
                                         <Icon name="fa6-solid:arrow-up-right-from-square" size="0.7rem" class="mr-1" /> Saiba mais
                                     </a>
                                 </p>
@@ -117,7 +122,7 @@
                                         ]"
                                     />
                                 </div>
-                                <Button @click="knowledge.activate(false)">
+                                <Button class="flex flex-row" @click="knowledge.activate(false)">
                                     <Icon name="line-md:close" />
                                     Fechar
                                 </Button>
@@ -137,7 +142,7 @@
                                 :activated="knowledge.activated === key && knowledge.open"
                                 @click="knowledge.activate(key)"
                             >
-                                <div class="relative flex flex-col items-center p-6">
+                                <div class="relative flex grow flex-col items-center p-6">
                                     <Icon v-if="value.love" name="ph:heart-fill" class="absolute right-2 top-2 text-red-600" />
                                     <Icon
                                         :name="value.icon"
@@ -167,29 +172,31 @@
                         href="https://dudomon.com"
                         target="_blank"
                         color="secondary"
-                        class="relative flex max-w-md flex-col items-center !p-0 text-center before:[--clip:2rem] after:[--clip:2rem]"
+                        class="relative !p-0 text-center before:[--clip:2rem] after:[--clip:2rem]"
                         anime
                     >
-                        <div class="p-4">
-                            <img src="/images/projects/dudomon.jpg" alt="" class="clip_path [--clip:2rem]">
-                        </div>
-                        <div class="p-4">
-                            <span class="text-sm opacity-50">
-                                nome
-                            </span>
-                            <h1 class="mb-6 font-bold capitalize">
-                                Dudomon
-                            </h1>
-                            <span class="text-sm opacity-50">
-                                tecnologias
-                            </span>
-                            <div class="flex flex-row justify-center gap-4">
-                                <Icon name="vscode-icons:file-type-nuxt" size="2rem" />
-                                <Icon name="vscode-icons:file-type-vue" size="2rem" />
-                                <Icon name="vscode-icons:file-type-typescript-official" size="2rem" />
-                                <Icon name="devicon:tailwindcss" size="2rem" />
-                                <Icon name="devicon:supabase" size="2rem" />
-                                <Icon name="devicon:nodejs" size="2rem" />
+                        <div class="flex max-w-md flex-col items-center">
+                            <div class="p-4">
+                                <img src="/images/projects/dudomon.jpg" alt="" class="clip_path [--clip:2rem]">
+                            </div>
+                            <div class="p-4">
+                                <span class="text-sm opacity-50">
+                                    nome
+                                </span>
+                                <h1 class="mb-6 font-bold capitalize">
+                                    Dudomon
+                                </h1>
+                                <span class="text-sm opacity-50">
+                                    tecnologias
+                                </span>
+                                <div class="flex flex-row justify-center gap-4">
+                                    <Icon name="vscode-icons:file-type-nuxt" size="2rem" />
+                                    <Icon name="vscode-icons:file-type-vue" size="2rem" />
+                                    <Icon name="vscode-icons:file-type-typescript-official" size="2rem" />
+                                    <Icon name="devicon:tailwindcss" size="2rem" />
+                                    <Icon name="devicon:supabase" size="2rem" />
+                                    <Icon name="devicon:nodejs" size="2rem" />
+                                </div>
                             </div>
                         </div>
                     </Button>
