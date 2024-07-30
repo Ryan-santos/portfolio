@@ -15,14 +15,14 @@
                 <div class="flex items-center justify-between text-lg">
                     <Icon
                         name="tabler:sun-filled"
-                        class="p-1 transition-all duration-200 ease-linear"
-                        size="1.5rem"
+                        class="m-1 transition-all duration-200 ease-linear"
+                        size="1rem"
                         :class="{ 'relative text-white': $colorMode.value === 'light' }"
                     />
                     <Icon
                         name="akar-icons:moon-fill"
-                        class="p-1 transition-all duration-200 ease-linear"
-                        size="1.5rem"
+                        class="m-1 transition-all duration-200 ease-linear"
+                        size="1rem"
                         :class="{ 'relative text-white': $colorMode.value === 'dark' }"
                     />
                 </div>

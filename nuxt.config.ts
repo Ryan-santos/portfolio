@@ -48,7 +48,7 @@ export default defineNuxtConfig({
         "@vueuse/nuxt",
         "nuxt-lodash",
         "nuxt-gtag",
-        "nuxt-icon"
+        "@nuxt/icon"
     ],
 
     eslint: {
@@ -70,6 +70,11 @@ export default defineNuxtConfig({
 
     gtag: {
         id: "G-TSXEY9CR96"
+    },
+
+    icon: {
+        class: "block",
+        provider: "iconify"
     },
 
     compatibilityDate: "2024-07-29"

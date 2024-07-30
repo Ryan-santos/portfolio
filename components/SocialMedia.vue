@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-row gap-6">
+    <div class="flex flex-row items-center gap-6">
         <a
             v-for="value, key in socialMedia"
             :key="key"
