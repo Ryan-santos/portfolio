@@ -67,7 +67,7 @@
                     anime
                 />
                 <p class="mb-12 text-center" anime>
-                    <Icon name="fluent:cursor-click-20-filled" size="1.5rem" />
+                    <Icon name="fluent:cursor-click-20-filled" size="1.5rem" class="inline-flex" />
                     Clique no card para ver mais informação
                 </p>
                 <div class="flex flex-col gap-12 lg:flex-row">
