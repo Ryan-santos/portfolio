@@ -1,6 +1,16 @@
 {
-    "name": "nuxt-app",
+    "name": "portfolio",
+    "version": "1.0.0",
     "private": true,
+    "author": {
+        "name": "Ryan santos",
+        "email": "ryandossantosfelix22@gmail.com",
+        "url": "https://ryancode.dev"
+    },
+    "type": "module",
+    "engines": {
+        "node": "^20"
+    },
     "scripts": {
         "build": "nuxt build",
         "dev": "nuxt dev",
