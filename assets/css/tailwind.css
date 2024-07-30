@@ -13,6 +13,33 @@
             scroll-smooth
             scroll-mt-12
         ;
+
+        &::-webkit-scrollbar {
+            @apply size-2;
+        }
+
+        &::-webkit-scrollbar-track {
+            @apply bg-inherit;
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            @apply rounded-full hover:!bg-primary;
+        }
+        
+        &:not(.scrollbar-white, scrollbar-black)::-webkit-scrollbar-thumb {
+            @apply bg-contrast/50;
+            scrollbar-color: theme(colors.contrast) initial;
+        }
+    
+        &.scrollbar-white::-webkit-scrollbar-thumb {
+            @apply bg-white/50;
+            scrollbar-color: theme(colors.white.DEFAULT) initial;
+        }
+    
+        &.scrollbar-black::-webkit-scrollbar-thumb {
+            @apply bg-black/50;
+            scrollbar-color: theme(colors.black.DEFAULT) initial;
+        }
     }
 
     body {
@@ -22,9 +49,8 @@
             text-base
             text-center
             sm:text-left
-            antialiased
-            transition-[background-color]
-            scrollbar
+            transition-colors
+            duration-500
         ;
     }
     
@@ -71,39 +97,6 @@
 
     hr {
         @apply border-t border-current opacity-20
-    }
-}
-
-@layer components {
-    .scrollbar {
-        scrollbar-width: thin;
-    }
-
-    .scrollbar::-webkit-scrollbar-track {
-        @apply bg-background-100;
-    }
-
-    .scrollbar::-webkit-scrollbar-thumb {
-        @apply rounded-full border-4 border-solid hover:!bg-primary;
-    }
-    
-    .scrollbar:not(.scrollbar-white, scrollbar-black)::-webkit-scrollbar-thumb {
-        @apply bg-primary border-background-100;
-        scrollbar-color: theme(colors.contrast) initial;
-    }
-
-    .scrollbar.scrollbar-white::-webkit-scrollbar-thumb {
-        @apply bg-white-100 border-black;
-        scrollbar-color: theme(colors.white.DEFAULT) initial;
-    }
-
-    .scrollbar.scrollbar-black::-webkit-scrollbar-thumb {
-        @apply bg-black border-white;
-        scrollbar-color: theme(colors.black.DEFAULT) initial;
-    }
-
-    .scrollbar::-webkit-scrollbar {
-        @apply h-6 w-3;
     }
 }
 
