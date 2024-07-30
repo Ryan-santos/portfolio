@@ -21,6 +21,7 @@ export default defineNuxtConfig({
                 { rel: "icon", type: "image/png", sizes: "512x512", href: "/favicon/android-chrome-512x512.png" }
             ]
         },
+
         pageTransition: {
             name: "page",
             mode: "out-in"
@@ -31,29 +32,29 @@ export default defineNuxtConfig({
         strict: true
     },
 
+    nitro: {
+        preset: "netlify"
+    },
+
     devtools: {
         enabled: true
     },
 
     modules: [
         "@nuxt/eslint",
-        "nuxt-gtag",
         "@nuxtjs/tailwindcss",
-        "nuxt-icon",
         "@nuxtjs/google-fonts",
         "@nuxtjs/color-mode",
         "@vueuse/nuxt",
-        "nuxt-lodash"
+        "nuxt-lodash",
+        "nuxt-gtag",
+        "nuxt-icon"
     ],
 
     eslint: {
         config: {
             stylistic: true
         }
-    },
-
-    gtag: {
-        id: "G-TSXEY9CR96"
     },
 
     googleFonts: {
@@ -67,8 +68,8 @@ export default defineNuxtConfig({
         classSuffix: ""
     },
 
-    nitro: {
-        preset: "netlify"
+    gtag: {
+        id: "G-TSXEY9CR96"
     },
 
     compatibilityDate: "2024-07-29"
