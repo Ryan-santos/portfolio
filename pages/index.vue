@@ -252,21 +252,21 @@
             ),
             new KnowledgeItem(
                 "Node.js",
-                2,
+                3,
                 "Node.js é um ambiente de execução JavaScript no lado do servidor, permitindo a construção de aplicativos web escaláveis e em tempo real.",
                 "https://nodejs.org",
                 "devicon:nodejs"
             ),
             new KnowledgeItem(
                 "TypeScript",
-                3,
+                4,
                 "TypeScript é uma linguagem de programação que adiciona recursos de tipagem estática opcional ao JavaScript, proporcionando maior segurança e escalabilidade ao desenvolvimento de aplicativos web.",
                 "https://www.typescriptlang.org",
                 "vscode-icons:file-type-typescript-official"
             ),
             new KnowledgeItem(
                 "Vue.js",
-                3,
+                5,
                 "Vue.js é um framework JavaScript de código aberto para criar interfaces de usuário reativas. É altamente personalizável e escalável, e pode ser usado para criar uma ampla variedade de aplicativos da web, desde sites simples até aplicativos de página única complexos.",
                 "https://vuejs.org",
                 "vscode-icons:file-type-vue",
@@ -274,7 +274,7 @@
             ),
             new KnowledgeItem(
                 "Nuxt",
-                3,
+                4,
                 "Nuxt.js é um poderoso framework para construir sites renderizados no servidor (SSR) e estáticos usando Vue.js. Ele oferece uma experiência de desenvolvimento simplificada e ajuda os desenvolvedores a criar aplicações web escaláveis, eficientes e de alto desempenho.",
                 "https://nuxt.com",
                 "vscode-icons:file-type-nuxt",
@@ -282,7 +282,7 @@
             ),
             new KnowledgeItem(
                 "tailwindCss",
-                3,
+                5,
                 "Tailwind CSS é um framework de desenvolvimento front-end de código aberto que oferece uma abordagem única para a criação de interfaces de usuário modernas e responsivas. Diferente de muitos outros frameworks, que se concentram em componentes pré-estilizados, o Tailwind CSS se baseia em uma filosofia de utilitários de classes altamente configuráveis.",
                 "https://tailwindcss.com",
                 "devicon:tailwindcss",
@@ -303,13 +303,6 @@
                 "devicon:laravel"
             ),
             new KnowledgeItem(
-                "Bootstrap",
-                4,
-                "Bootstrap é um framework de código aberto amplamente utilizado para criar sites e aplicativos web visualmente atraentes e responsivos. Ele oferece uma série de componentes pré-projetados, como botões, menus, formulários e carrosséis, que permitem aos desenvolvedores construir interfaces de usuário de forma rápida e fácil, sem a necessidade de começar do zero.",
-                "https://getbootstrap.com",
-                "devicon:bootstrap"
-            ),
-            new KnowledgeItem(
                 "Git",
                 2,
                 "Git é um sistema de controle de versão amplamente utilizado na programação. Ele permite que desenvolvedores acompanhem e gerenciem as mudanças em seus projetos de forma eficiente.",
@@ -322,6 +315,13 @@
                 "Figma é uma poderosa ferramenta de design gráfico e prototipagem colaborativa baseada em nuvem. Permite que designers e equipes criem, compartilhem e colaborem em projetos de design de interfaces de usuário (UI) e experiência do usuário (UX).",
                 "https://www.figma.com",
                 "devicon:figma"
+            ),
+            new KnowledgeItem(
+                "Git Flow",
+                4,
+                "Git Flow é uma forma organizada de usar o Git para desenvolver. Ele ajuda a gerenciar diferentes versões do código e facilita o fluxo de trabalho",
+                "",
+                "ph:git-diff-light"
             )
         ],
 
