@@ -29,7 +29,7 @@
         "@vueuse/nuxt": "^10.11.0",
         "eslint-plugin-tailwindcss": "^3.17.4",
         "nuxt": "^3.12.4",
-        "nuxt-gtag": "^0.6.3",
+        "nuxt-gtag": "^2.1.0",
         "nuxt-lodash": "^2.5.3",
         "tailwind-easy-theme": "^1.1.1",
         "vue3-lottie": "^3.3.0"
