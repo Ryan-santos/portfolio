@@ -4,7 +4,7 @@
         enterToClass="opacity-100"
     >
         <template v-for="value, key in _text" :key="key">
-            <span v-if="value !== '.'" class="relative left-0 transition-all duration-300" :class="{'text-primary': _text[key+1] === '.'}">
+            <span v-if="value !== '.'" class="relative left-0 transition-all duration-300" :class="{ 'text-primary': _text[key+1] === '.' }">
                 {{ value }}
             </span>
         </template>

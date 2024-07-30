@@ -1,6 +1,16 @@
 {
-    "name": "nuxt-app",
+    "name": "portfolio",
+    "version": "1.2.0",
     "private": true,
+    "author": {
+        "name": "Ryan santos",
+        "email": "ryandossantosfelix22@gmail.com",
+        "url": "https://ryancode.dev"
+    },
+    "type": "module",
+    "engines": {
+        "node": "^20"
+    },
     "scripts": {
         "build": "nuxt build",
         "dev": "nuxt dev",
@@ -10,19 +20,18 @@
         "lint": "eslint ."
     },
     "devDependencies": {
-        "@nuxt/devtools": "^0.6.3",
-        "@nuxtjs/color-mode": "^3.2.0",
-        "@nuxtjs/eslint-config-typescript": "^12.0.0",
-        "@nuxtjs/google-fonts": "^3.0.1",
-        "@nuxtjs/tailwindcss": "^6.6.5",
+        "@nuxt/eslint": "^0.4.0",
+        "@nuxt/icon": "^1.4.0",
+        "@nuxtjs/color-mode": "^3.4.2",
+        "@nuxtjs/google-fonts": "^3.2.0",
+        "@nuxtjs/tailwindcss": "^6.12.1",
         "@vueuse/core": "^10.2.1",
-        "@vueuse/nuxt": "^10.2.1",
-        "eslint-plugin-tailwindcss": "^3.10.3",
-        "nuxt": "^3.7.1",
-        "nuxt-gtag": "^0.6.2",
-        "nuxt-icon": "^0.4.1",
-        "nuxt-lodash": "^2.5.0",
-        "tailwind-easy-theme": "^1.1.1",
-        "vue3-lottie": "^3.0.0"
+        "@vueuse/nuxt": "^10.11.0",
+        "eslint-plugin-tailwindcss": "^3.17.4",
+        "nuxt": "^3.12.4",
+        "nuxt-gtag": "^2.1.0",
+        "nuxt-lodash": "^2.5.3",
+        "tw-colors": "^3.3.1",
+        "vue3-lottie": "^3.3.0"
     }
 }

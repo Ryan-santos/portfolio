@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
-import { Theme } from "tailwind-easy-theme";
+import { createThemes } from "tw-colors";
 
 const colors = {
     white: {
@@ -13,26 +13,9 @@ const colors = {
     }
 };
 
-const baseColors = new Theme({ // LIGHT
-    background: {
-        ...colors.white
-    },
-    contrast: {
-        ...colors.black
-    }
-});
-
-const variantColors = baseColors.variant({ // DARK
-    background: {
-        ...colors.black
-    },
-    contrast: {
-        ...colors.white
-    }
-});
-
 export default <Partial<Config>> {
     darkMode: "class",
+
     theme: {
         container: {
             center: true,
@@ -57,8 +40,16 @@ export default <Partial<Config>> {
         plugin(function ({ addVariant }) {
             addVariant("activated", ["&.active", "&.activated"]);
         }),
-        baseColors.create({
-            ".dark": variantColors
+
+        createThemes({
+            light: {
+                background: colors.white,
+                contrast: colors.black
+            },
+            dark: {
+                background: colors.black,
+                contrast: colors.white
+            }
         })
     ]
 };
