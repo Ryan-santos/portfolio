@@ -7,7 +7,13 @@
         <div class="container" anime>
             <div class="flex flex-col items-center justify-center border-b py-3 lg:flex-row" :class="!navbar.transparent ? 'border-contrast/10' : 'border-transparent'">
                 <div class="flex w-full flex-row items-center justify-between lg:w-fit">
-                    <a href="#" class="group w-[10rem]" anime @mouseenter="logo.toggleDirection()" @mouseleave="logo.toggleDirection()">
+                    <a
+                        href="#"
+                        class="group w-40"
+                        anime
+                        @mouseenter="logo.toggleDirection()"
+                        @mouseleave="logo.toggleDirection()"
+                    >
                         <ClientOnly>
                             <Vue3Lottie
                                 ref="lottieLogo"
@@ -17,7 +23,7 @@
                             />
                         </ClientOnly>
                     </a>
-                    <button class="relative h-10 w-10 lg:hidden" :class="{'text-red-600': navbar.open}" @click="navbar.toggle()">
+                    <button class="relative size-10 lg:hidden" :class="{ 'text-red-600': navbar.open }" @click="navbar.toggle()">
                         <div class="absolute left-1/2 top-1/2 block w-6 -translate-x-1/2 -translate-y-1/2">
                             <span
                                 aria-hidden="true"
@@ -27,7 +33,7 @@
                             <span
                                 aria-hidden="true"
                                 class="absolute block h-0.5 w-6 bg-current transition duration-300 ease-in-out"
-                                :class="{'opacity-0': navbar.open } "
+                                :class="{ 'opacity-0': navbar.open } "
                             />
                             <span
                                 aria-hidden="true"
@@ -39,7 +45,7 @@
                 </div>
                 <div
                     class="flex h-0 w-full flex-col items-center overflow-hidden transition-all duration-500 lg:h-auto lg:flex-row lg:overflow-visible"
-                    :class="{'h-[calc(100dvh-4.125rem)] sm:h-[8rem]': navbar.open}"
+                    :class="{ 'h-[calc(100dvh-4.125rem)] sm:h-32': navbar.open }"
                 >
                     <hr class="mt-6 w-full sm:hidden">
                     <ul class="my-auto flex flex-col gap-6 sm:flex-row lg:ml-auto">

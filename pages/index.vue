@@ -2,13 +2,13 @@
     <div class="overflow-hidden">
         <section id="inicio" class="relative flex h-full min-h-screen flex-row items-center" containerAnime>
             <div class="absolute inset-0 -z-10">
-                <div class="absolute left-0 top-0 h-[10vw] w-[10vw] bg-primary" anime />
-                <div class="absolute bottom-0 right-0 hidden h-[10vw] w-[10vw] bg-primary sm:block" anime />
+                <div class="absolute left-0 top-0 size-[10vw] bg-primary" anime />
+                <div class="absolute bottom-0 right-0 hidden size-[10vw] bg-primary sm:block" anime />
                 <div class="absolute inset-0 z-10 h-full backdrop-blur-[300px] sm:h-[200%]" />
             </div>
             <article class="container relative flex h-full flex-row items-center justify-center gap-12 pt-12 text-center">
                 <div class="max-w-screen-md">
-                    <VSvg name="keys" class="mask-transparent mx-auto w-full max-w-[10rem] [--percentage:10%]" anime />
+                    <VSvg name="keys" class="mask-transparent mx-auto w-full max-w-40 [--percentage:10%]" anime />
                     <SuperTitle class="mb-8" anime>
                         <Typing text="Desenvolvendo um novo f.u.t.u.r.o." />
                     </SuperTitle>
@@ -29,7 +29,12 @@
 
         <section id="quem-sou" class="relative" containerAnime>
             <div class="container">
-                <VSvg name="squares" class="absolute bottom-0 left-0 max-w-screen-sm" filled anime />
+                <VSvg
+                    name="squares"
+                    class="absolute bottom-0 left-0 max-w-screen-sm"
+                    filled
+                    anime
+                />
                 <article class="clip_path relative z-10 mx-auto flex h-full max-w-screen-xs flex-col items-center justify-center gap-12 bg-background-100 p-6 [--clip:2rem] lg:max-w-screen-lg lg:flex-row" anime>
                     <div class="clip_path w-full max-w-screen-xs [--clip:2rem]">
                         <img src="/images/presentation.png" alt="Ryan" anime>
@@ -108,7 +113,7 @@
                                         class="clip_path h-4"
                                         :class="[
                                             knowledge.items[knowledge.activated!]?.competence >= i ? 'bg-primary' : 'bg-primary/20',
-                                            {'[--clip-left:0]': i === 1, '[--clip-right:100%]': i === 5}
+                                            { '[--clip-left:0]': i === 1, '[--clip-right:100%]': i === 5 }
                                         ]"
                                     />
                                 </div>
@@ -134,7 +139,12 @@
                             >
                                 <div class="relative flex flex-col items-center p-6">
                                     <Icon v-if="value.love" name="ph:heart-fill" class="absolute right-2 top-2 text-red-600" />
-                                    <Icon :name="value.icon" size="5rem" class="mb-6 transition-all duration-300" :class="{'grayscale group-hover/button:grayscale-0 group-[.activated]/button:grayscale-0': knowledge.open}" />
+                                    <Icon
+                                        :name="value.icon"
+                                        size="5rem"
+                                        class="mb-6 transition-all duration-300"
+                                        :class="{ 'grayscale group-hover/button:grayscale-0 group-[.activated]/button:grayscale-0': knowledge.open }"
+                                    />
                                     {{ value.name }}
                                 </div>
                             </Button>
@@ -204,7 +214,6 @@
     const linkContato = "mailto:ryandossantosfelix22@gmail.com";
 
     class KnowledgeItem {
-        // eslint-disable-next-line no-useless-constructor
         constructor (
             public name: string,
             public competence: 1 | 2 | 3 | 4 | 5,

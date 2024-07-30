@@ -35,7 +35,7 @@
             activated:hover:before:translate-x-0
             activated:hover:before:translate-y-0
         "
-        :class="[_color, {'activated': activated, 'px-4 py-2': !noPadding}]"
+        :class="[_color, { 'activated': activated, 'px-4 py-2': !noPadding }]"
     >
         <span class="relative z-10">
             <slot />

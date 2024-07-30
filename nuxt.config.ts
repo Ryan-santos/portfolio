@@ -36,6 +36,7 @@ export default defineNuxtConfig({
     },
 
     modules: [
+        "@nuxt/eslint",
         "nuxt-gtag",
         "@nuxtjs/tailwindcss",
         "nuxt-icon",
@@ -44,6 +45,12 @@ export default defineNuxtConfig({
         "@vueuse/nuxt",
         "nuxt-lodash"
     ],
+
+    eslint: {
+        config: {
+            stylistic: true
+        }
+    },
 
     gtag: {
         id: "G-TSXEY9CR96"

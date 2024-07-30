@@ -2,7 +2,7 @@
 <template>
     <span
         class="_SVG block"
-        :class="{ '_SVG_CURRENTCOLOR': currentcolor }"
+        :class="{ _SVG_CURRENTCOLOR: currentcolor }"
         v-html="icon"
     />
 </template>
@@ -11,7 +11,7 @@
     import { ref, watchEffect } from "vue";
 
     const props = withDefaults(defineProps<{
-        name: string;
+        name: string
         currentcolor?: boolean
     }>(), {
         currentcolor: false
