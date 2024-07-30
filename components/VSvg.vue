@@ -21,10 +21,11 @@
 
     watchEffect(async () => {
         try {
-            const iconsImport = import.meta.glob("/assets/svg/**/**.svg", {
-                as: "raw",
-                eager: false
+            const iconsImport = import.meta.glob<false, string, string>("/assets/svg/**/**.svg", {
+                query: "?raw",
+                import: "default"
             });
+
             const rawIcon = await iconsImport[`/assets/svg/${props.name}.svg`]();
             icon.value = rawIcon;
         }
