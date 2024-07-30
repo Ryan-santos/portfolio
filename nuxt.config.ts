@@ -31,6 +31,10 @@ export default defineNuxtConfig({
         strict: true
     },
 
+    devtools: {
+        enabled: true
+    },
+
     modules: [
         "nuxt-gtag",
         "@nuxtjs/tailwindcss",
@@ -54,10 +58,6 @@ export default defineNuxtConfig({
     colorMode: {
         fallback: "dark",
         classSuffix: ""
-    },
-
-    devtools: {
-        enabled: false
     },
 
     nitro: {
