@@ -1,3 +1,5 @@
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineNuxtConfig({
     app: {
         head: {
@@ -23,10 +25,17 @@ export default defineNuxtConfig({
         },
 
         pageTransition: {
-            name: "page",
+            enterActiveClass: "transition-all duration-200",
+            enterFromClass: "opacity-0 blur-md translate-y-8",
+            leaveActiveClass: "transition-all duration-200",
+            leaveToClass: "opacity-0 blur-md translate-y-8",
             mode: "out-in"
         }
     },
+
+    css: [
+        "~/assets/css/main.css"
+    ],
 
     typescript: {
         strict: true
@@ -36,13 +45,18 @@ export default defineNuxtConfig({
         preset: "netlify"
     },
 
+    vite: {
+        plugins: [
+            tailwindcss()
+        ]
+    },
+
     devtools: {
         enabled: true
     },
 
     modules: [
         "@nuxt/eslint",
-        "@nuxtjs/tailwindcss",
         "@nuxtjs/google-fonts",
         "@nuxtjs/color-mode",
         "@vueuse/nuxt",

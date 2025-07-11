@@ -61,13 +61,3 @@
         window.addEventListener("scroll", () => elementsAnime.scroll());
     });
 </script>
-
-<style lang="postcss">
-    [containerAnime] [anime] {
-        @apply translate-y-12 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.250,0.460,0.450,0.940)]
-    }
-
-    [containerAnime] [anime]._ANIME {
-        @apply transform-none opacity-100
-    }
-</style>

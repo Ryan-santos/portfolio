@@ -1,11 +1,11 @@
 <template>
     <Button
         color="secondary"
-        class="relative flex flex-col items-center !p-0 before:[--clip:2rem] after:[--clip:2rem]"
+        class="relative flex flex-col items-center !p-0 before:clip-path-8 after:clip-path-8"
         anime
     >
         <div class="p-4">
-            <img src="/images/projects/super-controller.jpg" alt="" class="clip_path [--clip:2rem]">
+            <img src="/images/projects/super-controller.jpg" alt="" class="clip-path-8">
         </div>
         <div class="p-4">
             <span class="text-sm opacity-50">

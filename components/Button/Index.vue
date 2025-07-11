@@ -3,8 +3,8 @@
         :is="href ? NuxtLink : 'button'"
         :href="href"
         class="
-            after:clip_path
-            before:clip_path
+            after:clip-path-4
+            before:clip-path-4
 
             group/button
             relative
@@ -33,7 +33,6 @@
             activated:scale-100
             activated:cursor-not-allowed
             activated:hover:before:translate-x-0
-            activated:hover:before:translate-y-0
         "
         :class="[_color, { 'activated': activated, 'px-4 py-2': !noPadding }]"
     >
@@ -61,19 +60,19 @@
     const _color = computed(() => {
         return /* @tw */ {
             primary: [
-                "text-white after:bg-primary before:bg-primary",
+                "text-light after:bg-primary before:bg-primary",
                 "hover:text-background hover:after:bg-contrast",
                 "activated:text-background activated:after:bg-contrast"
             ],
             secondary: [
                 "text-contrast after:bg-background-100 before:bg-contrast",
-                "hover:text-white hover:after:bg-primary",
-                "activated:text-white activated:after:bg-primary"
+                "hover:text-light hover:after:bg-primary",
+                "activated:text-light activated:after:bg-primary"
             ],
             white: [
-                "text-black after:bg-white before:bg-white",
-                "hover:text-white hover:after:bg-black",
-                "activated:text-white activated:after:bg-primary"
+                "text-black after:bg-light before:bg-light",
+                "hover:text-light hover:after:bg-black",
+                "activated:text-light activated:after:bg-primary"
             ],
             outline: [
                 "text-contrast after:bg-background before:bg-primary before:w-[calc(100%+2px)] before:h-[calc(100%+2px)] before:-translate-x-px before:-translate-y-px",

@@ -1,6 +1,6 @@
 <template>
     <div class="overflow-hidden">
-        <section id="inicio" class="relative flex h-full min-h-screen flex-row items-center" containerAnime>
+        <section id="inicio" class="relative flex h-full min-h-screen flex-row items-center py-16 justify-center" containerAnime>
             <div class="absolute inset-0 -z-10">
                 <div class="absolute left-0 top-0 size-[10vw] bg-primary" anime />
                 <div class="absolute bottom-0 right-0 hidden size-[10vw] bg-primary sm:block" anime />
@@ -8,7 +8,7 @@
             </div>
             <article class="container relative flex h-full flex-row items-center justify-center gap-12 pt-12 text-center">
                 <div class="max-w-screen-md">
-                    <VSvg name="keys" class="mask-transparent mx-auto w-full max-w-40 [--percentage:10%]" anime />
+                    <VSvg name="keys" class="mask-b-to-90% mx-auto w-full max-w-40" anime />
                     <SuperTitle class="mb-8" anime>
                         <Typing text="Desenvolvendo um novo f.u.t.u.r.o." />
                     </SuperTitle>
@@ -27,7 +27,7 @@
             </article>
         </section>
 
-        <section id="quem-sou" class="relative" containerAnime>
+        <section id="quem-sou" class="relative min-h-screen py-16 flex flex-col justify-center" containerAnime>
             <div class="container">
                 <VSvg
                     name="squares"
@@ -35,8 +35,8 @@
                     filled
                     anime
                 />
-                <article class="clip_path relative z-10 mx-auto flex h-full max-w-screen-xs flex-col items-center justify-center gap-12 bg-background-100 p-6 [--clip:2rem] lg:max-w-screen-lg lg:flex-row" anime>
-                    <div class="clip_path w-full max-w-screen-xs [--clip:2rem]">
+                <article class="clip-path-8 relative z-10 mx-auto flex h-full max-w-screen-xs flex-col items-center justify-center gap-12 bg-background-100 p-6 lg:max-w-screen-lg lg:flex-row" anime>
+                    <div class="clip-path-8 w-full max-w-screen-xs">
                         <img src="/images/presentation.png" alt="Ryan" anime>
                     </div>
                     <div class="w-full text-center lg:text-left">
@@ -58,7 +58,7 @@
             </div>
         </section>
 
-        <section id="conhecimentos" class="container py-24" containerAnime>
+        <section id="conhecimentos" class="container min-h-screen py-16 flex flex-col justify-center" containerAnime>
             <article>
                 <SuperTitle
                     aboveTitle="Conhecimentos"
@@ -78,7 +78,7 @@
                         leaveToClass="grid grid-cols-[0fr] grid-rows-[0fr] opacity-0"
                     >
                         <div v-show="knowledge.open" ref="knowledgeInfo" class="transition-all duration-500">
-                            <div class="clip_path w-full justify-items-start overflow-hidden bg-background-100 p-4 text-center [--clip:1.5rem] sm:p-8 lg:max-w-screen-sm lg:text-left">
+                            <div class="clip-path-6 w-full justify-items-start overflow-hidden bg-background-100 p-4 text-center sm:p-8 lg:max-w-screen-sm lg:text-left">
                                 <div class="mb-8 flex flex-row items-center justify-center gap-6 lg:justify-start">
                                     <Icon :name="knowledge.items[knowledge.activated!]?.icon" size="4rem" />
                                     <h1 class="font-title uppercase">
@@ -111,11 +111,11 @@
                                     </h5>
                                     <hr class="w-full">
                                 </div>
-                                <div class="mb-8 grid grid-flow-col">
+                                <div class="mb-8 grid grid-flow-col w-full">
                                     <div
                                         v-for="i in 5"
                                         :key="i"
-                                        class="clip_path h-4"
+                                        class="clip-path-4 h-4"
                                         :class="[
                                             knowledge.items[knowledge.activated!]?.competence >= i ? 'bg-primary' : 'bg-primary/20',
                                             { '[--clip-left:0]': i === 1, '[--clip-right:100%]': i === 5 }
@@ -137,7 +137,7 @@
                         >
                             <Button
                                 color="outline"
-                                class="w-full before:[--clip:1.5rem] after:[--clip:1.5rem]"
+                                class="w-full before:clip-path-6 after:clip-path-6"
                                 noPadding
                                 :activated="knowledge.activated === key && knowledge.open"
                                 @click="knowledge.activate(key)"
@@ -159,7 +159,7 @@
             </article>
         </section>
 
-        <section id="projetos" class="container" containerAnime>
+        <section id="projetos" class="container min-h-screen py-16 flex flex-col justify-center" containerAnime>
             <article>
                 <SuperTitle
                     aboveTitle="Projetos"
@@ -172,12 +172,12 @@
                         href="https://dudomon.com"
                         target="_blank"
                         color="secondary"
-                        class="relative !p-0 text-center before:[--clip:2rem] after:[--clip:2rem]"
+                        class="relative !p-0 text-center before:clip-path-8 after:clip-path-8"
                         anime
                     >
                         <div class="flex max-w-md flex-col items-center">
                             <div class="p-4">
-                                <img src="/images/projects/dudomon.jpg" alt="" class="clip_path [--clip:2rem]">
+                                <img src="/images/projects/dudomon.jpg" alt="" class="clip-path-8">
                             </div>
                             <div class="p-4">
                                 <span class="text-sm opacity-50">
@@ -205,7 +205,7 @@
         </section>
 
         <div class="container py-12" containerAnime>
-            <div class="clip_path bg-primary p-4 py-12 text-center text-white [--clip:2rem] md:px-12" anime>
+            <div class="clip-path-8 bg-primary p-4 py-12 text-center text-light md:px-12" anime>
                 <SuperTitle class="mb-12" anime>
                     Eai? Vamos tirar esse projeto do papel?
                 </SuperTitle>
@@ -347,9 +347,3 @@
         }
     });
 </script>
-
-<style scoped lang="postcss">
-    section {
-        @apply min-h-screen py-16 flex flex-col justify-center
-    }
-</style>
