@@ -23,6 +23,8 @@
     --scrollbar-width: thin;
     --scrollbar-radius: 0.3125rem;
     --scrollbar-size: 0.625rem;
+
+    --breakpoint-xs: 30rem;
 }
 
 @layer base {
