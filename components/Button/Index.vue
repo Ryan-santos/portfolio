@@ -3,38 +3,21 @@
         :is="href ? NuxtLink : 'button'"
         :href="href"
         class="
-            after:clip-path-4
+            group/button relative inline-block text-lg font-semibold tracking-wide transition-all
+            duration-300 select-none
+            before:absolute before:inset-0 before:transition-all before:duration-300
             before:clip-path-4
-
-            group/button
-            relative
-            inline-block
-            select-none
-            text-lg
-            font-semibold
-            tracking-wide
-            transition-all
-            duration-300
-
-            before:absolute
-            before:inset-0
-            before:transition-all
-            before:duration-300
-
-            after:absolute
-            after:inset-0
-            after:transition-all
-            after:duration-300
-
-            hover:scale-105
-            hover:before:translate-x-1.5
-            hover:before:translate-y-1.5
-
-            activated:scale-100
-            activated:cursor-not-allowed
-            activated:hover:before:translate-x-0
+            after:absolute after:inset-0 after:transition-all after:duration-300 after:clip-path-4
+            hover:scale-105 hover:before:translate-x-1.5 hover:before:translate-y-1.5
+            activated:scale-100 activated:cursor-not-allowed activated:hover:before:translate-x-0
         "
-        :class="[_color, { 'activated': activated, 'px-4 py-2': !noPadding }]"
+        :class="[
+            _color,
+            {
+                'activated': activated,
+                'px-4 py-2': !noPadding
+            }
+        ]"
     >
         <span class="relative z-10 flex flex-row items-center gap-1">
             <slot />

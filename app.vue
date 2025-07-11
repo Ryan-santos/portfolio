@@ -1,7 +1,10 @@
 <template>
     <main>
         <Head>
-            <Meta name="color-scheme" :content="`only ${$colorMode.preference}`" />
+            <Meta
+                name="color-scheme"
+                :content="`only ${$colorMode.preference}`"
+            />
         </Head>
 
         <NavBar />
@@ -11,7 +14,12 @@
         <footer>
             <article class="container pb-6">
                 <hr class="my-8">
-                <div class="flex flex-col items-center justify-between gap-8 md:flex-row">
+                <div
+                    class="
+                        flex flex-col items-center justify-between gap-8
+                        md:flex-row
+                    "
+                >
                     <VSvg name="logo" />
                     <p>
                         Copyright © {{ new Date().getFullYear() }}. Todos os direitos reservados.

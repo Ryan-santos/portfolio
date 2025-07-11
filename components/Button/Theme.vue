@@ -8,9 +8,20 @@
                 :checked="$colorMode.value === 'dark'"
                 @change="ColorModePreference($event)"
             >
-            <label for="check_tema_modo" class="clip-path-1 relative z-0 block size-auto cursor-pointer bg-background-100 text-contrast/30">
-                <span class="absolute inset-0 block h-full w-1/2 transition-all duration-200 ease-linear" :class="{ 'translate-x-full': $colorMode.value == 'dark' }">
-                    <span class="clip-path-1 block size-full bg-primary" />
+            <label
+                for="check_tema_modo"
+                class="
+                    relative z-0 block size-auto cursor-pointer bg-background-100 text-contrast/30
+                    clip-path-1
+                "
+            >
+                <span
+                    class="
+                        absolute inset-0 block h-full w-1/2 transition-all duration-200 ease-linear
+                    "
+                    :class="{ 'translate-x-full': $colorMode.value == 'dark' }"
+                >
+                    <span class="block size-full bg-primary clip-path-1" />
                 </span>
                 <div class="flex items-center justify-between text-lg">
                     <Icon
