@@ -1,4 +1,5 @@
 import tailwindcss from "@tailwindcss/vite";
+import { name } from "./package.json";
 
 export default defineNuxtConfig({
 
@@ -98,10 +99,17 @@ export default defineNuxtConfig({
         classSuffix: ""
     },
 
-    compatibilityDate: "2024-07-29",
+    compatibilityDate: "latest",
 
     nitro: {
-        preset: "netlify"
+        preset: "cloudflare_module",
+        cloudflare: {
+            deployConfig: true,
+            nodeCompat: true,
+            wrangler: {
+                name
+            }
+        }
     },
 
     vite: {
