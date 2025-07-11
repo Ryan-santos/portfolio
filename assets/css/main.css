@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-    font-family: "arkhip";
-    src: url("/fonts/arkhip.ttf") format("truetype");
-}
-
 @theme {
     --font-sans: "Urbanist";
     --font-title: "arkhip";

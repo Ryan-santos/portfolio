@@ -57,7 +57,7 @@ export default defineNuxtConfig({
 
     modules: [
         "@nuxt/eslint",
-        "@nuxtjs/google-fonts",
+        "@nuxt/fonts",
         "@nuxtjs/color-mode",
         "@vueuse/nuxt",
         "nuxt-lodash",
@@ -71,9 +71,9 @@ export default defineNuxtConfig({
         }
     },
 
-    googleFonts: {
-        families: {
-            Urbanist: [100, 200, 300, 400, 500, 600, 700, 800, 900]
+    fonts: {
+        defaults: {
+            weights: ["100 900"]
         }
     },
 
