@@ -96,10 +96,6 @@
         @apply select-none;
     }
 
-    a.link {
-        @apply underline underline-offset-4 transition-all duration-300 hover:text-primary;
-    }
-
     button:disabled {
         @apply opacity-60;
     }
@@ -120,6 +116,10 @@
 @utility container {
     margin-inline: auto;
     padding-inline: 2rem;
+}
+
+@utility link {
+    @apply underline underline-offset-4 transition-all duration-300 hover:text-primary;
 }
 
 @utility clip-path-* {
