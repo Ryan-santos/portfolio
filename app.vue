@@ -20,7 +20,12 @@
                         md:flex-row
                     "
                 >
-                    <VSvg name="logo" />
+                    <div class="flex flex-row gap-4 items-end">
+                        <VSvg name="logo" />
+                        <span class="leading-none font-title text-xs">
+                            v{{ version }}
+                        </span>
+                    </div>
                     <p>
                         Copyright © {{ new Date().getFullYear() }}. Todos os direitos reservados.
                     </p>
@@ -32,6 +37,8 @@
 </template>
 
 <script setup lang="ts">
+    import { version } from '~/package.json';
+
     const elementsAnime = {
         elements: undefined as undefined | NodeListOf<HTMLDivElement>,
         idChild: "child_anime",
