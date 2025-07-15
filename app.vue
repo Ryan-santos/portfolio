@@ -1,7 +1,10 @@
 <template>
     <main>
         <Head>
-            <Meta name="color-scheme" :content="`only ${$colorMode.preference}`" />
+            <Meta
+                name="color-scheme"
+                :content="`only ${$colorMode.preference}`"
+            />
         </Head>
 
         <NavBar />
@@ -11,8 +14,18 @@
         <footer>
             <article class="container pb-6">
                 <hr class="my-8">
-                <div class="flex flex-col items-center justify-between gap-8 md:flex-row">
-                    <VSvg name="logo" />
+                <div
+                    class="
+                        flex flex-col items-center justify-between gap-8
+                        md:flex-row
+                    "
+                >
+                    <div class="flex flex-row gap-4 items-end">
+                        <VSvg name="logo" />
+                        <span class="leading-none font-title text-xs">
+                            v{{ version }}
+                        </span>
+                    </div>
                     <p>
                         Copyright © {{ new Date().getFullYear() }}. Todos os direitos reservados.
                     </p>
@@ -24,6 +37,8 @@
 </template>
 
 <script setup lang="ts">
+    import { version } from '~/package.json';
+
     const elementsAnime = {
         elements: undefined as undefined | NodeListOf<HTMLDivElement>,
         idChild: "child_anime",
@@ -61,13 +76,3 @@
         window.addEventListener("scroll", () => elementsAnime.scroll());
     });
 </script>
-
-<style lang="postcss">
-    [containerAnime] [anime] {
-        @apply translate-y-12 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.250,0.460,0.450,0.940)]
-    }
-
-    [containerAnime] [anime]._ANIME {
-        @apply transform-none opacity-100
-    }
-</style>

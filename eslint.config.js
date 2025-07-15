@@ -1,9 +1,7 @@
 import { withNuxt } from "./.nuxt/eslint.config.mjs";
-import tailwind from "eslint-plugin-tailwindcss";
+import eslintPluginBetterTailwindcss from "eslint-plugin-better-tailwindcss";
 
-export default withNuxt(
-    ...tailwind.configs["flat/recommended"]
-)
+export default withNuxt()
     .override("nuxt/rules", {
         rules: {
             camelcase: [
@@ -13,33 +11,12 @@ export default withNuxt(
                     ignoreDestructuring: true
                 }
             ],
-            eqeqeq: [
-                "error",
-                "always"
-            ],
+            eqeqeq: ["error", "always"],
             curly: "error",
             "no-console": [
                 "warn",
                 {
-                    allow: [
-                        "warn",
-                        "error"
-                    ]
-                }
-            ],
-            "import/order": [
-                "warn",
-                {
-                    groups: [
-                        "type",
-                        "index",
-                        "sibling",
-                        "parent",
-                        "internal",
-                        "external",
-                        "builtin",
-                        "object"
-                    ]
+                    allow: ["warn", "error"]
                 }
             ]
         }
@@ -53,57 +30,64 @@ export default withNuxt(
                     SwitchCase: 1
                 }
             ],
-            "@stylistic/quotes": [
-                "error",
-                "double"
-            ],
-            "@stylistic/semi": [
-                "error",
-                "always"
-            ],
-            "@stylistic/comma-dangle": [
-                "error",
-                "never"
-            ],
-            "@stylistic/eol-last": [
-                "error",
-                "never"
-            ],
-            "@stylistic/brace-style": [
-                "error",
-                "stroustrup"
-            ],
-            "@stylistic/space-before-function-paren": [
-                "error",
-                "always"
-            ],
-            "@stylistic/quote-props": [
-                "error",
-                "as-needed"
-            ],
-            "@stylistic/type-generic-spacing": "off"
-        }
-    })
-    .override("nuxt/typescript/rules", {
-        rules: {
-            "@typescript-eslint/ban-types": [
+            "@stylistic/quotes": ["error", "double"],
+            "@stylistic/semi": ["error", "always"],
+            "@stylistic/comma-dangle": ["error", "never"],
+            "@stylistic/eol-last": ["error", "never"],
+            "@stylistic/brace-style": ["error", "stroustrup"],
+            "@stylistic/space-before-function-paren": ["error", "always"],
+            "@stylistic/quote-props": ["error", "as-needed"],
+            "@stylistic/type-generic-spacing": "off",
+            "@stylistic/object-curly-newline": [
                 "error",
                 {
-                    types: {
-                        "{}": false
+                    ObjectExpression: {
+                        multiline: true,
+                        minProperties: 2,
+                        consistent: true
+                    },
+                    ExportDeclaration: {
+                        multiline: true,
+                        minProperties: 1,
+                        consistent: true
                     }
                 }
-            ]
+            ],
+            "@stylistic/object-property-newline": [
+                "error",
+                {
+                    allowAllPropertiesOnSameLine: false
+                }
+            ],
+            "@stylistic/array-bracket-newline": [
+                "error",
+                {
+                    multiline: true,
+                    minItems: 3
+                }
+            ],
+            "@stylistic/array-element-newline": [
+                "error",
+                {
+                    ArrayExpression: {
+                        multiline: true,
+                        minItems: 3
+                    }
+                }
+            ],
+            "@stylistic/array-bracket-spacing": ["error", "never"]
         }
     })
     .override("nuxt/vue/rules", {
         rules: {
-            "@stylistic/ts/indent": "off",
             "vue/html-indent": [
                 "error",
                 4,
                 {
-                    baseIndent: 1
+                    attribute: 1,
+                    baseIndent: 1,
+                    closeBracket: 0,
+                    alignAttributesVertically: false
                 }
             ],
             "vue/script-indent": [
@@ -139,23 +123,56 @@ export default withNuxt(
                     ]
                 }
             ],
-            "vue/comma-dangle": [
+            "vue/comma-dangle": ["error", "never"],
+            "vue/max-attributes-per-line": [
                 "error",
-                "never"
-            ],
-            "vue/max-attributes-per-line": ["error", {
-                singleline: {
-                    max: 3
-                },
-                multiline: {
-                    max: 1
+                {
+                    singleline: {
+                        max: 1
+                    },
+                    multiline: {
+                        max: 1
+                    }
                 }
-            }]
-        }
-    })
-    .override("tailwindcss:rules", {
-        rules: {
-            "tailwindcss/no-custom-classname": "off"
+            ],
+            "vue/object-curly-newline": [
+                "error",
+                {
+                    ObjectExpression: {
+                        multiline: true,
+                        minProperties: 2,
+                        consistent: true
+                    },
+                    ExportDeclaration: {
+                        multiline: true,
+                        minProperties: 2,
+                        consistent: true
+                    }
+                }
+            ],
+            "vue/object-property-newline": [
+                "error",
+                {
+                    allowAllPropertiesOnSameLine: false
+                }
+            ],
+            "vue/array-bracket-newline": [
+                "error",
+                {
+                    multiline: true,
+                    minItems: 3
+                }
+            ],
+            "vue/array-element-newline": [
+                "error",
+                {
+                    ArrayExpression: {
+                        multiline: true,
+                        minItems: 3
+                    }
+                }
+            ],
+            "vue/array-bracket-spacing": ["error", "never"]
         }
     })
     .append({
@@ -163,5 +180,53 @@ export default withNuxt(
         files: ["**/*.vue"],
         rules: {
             "@stylistic/indent": "off"
+        }
+    })
+    .append({
+        name: "better-tailwindcss",
+        plugins: {
+            "better-tailwindcss": eslintPluginBetterTailwindcss
+        },
+        settings: {
+            "better-tailwindcss": {
+                entryPoint: "assets/css/main.css",
+                attributes: [
+                    "class",
+                    "className",
+                    ".*Class"
+                ],
+                variables: [
+                    "className",
+                    "classNames",
+                    "classes",
+                    "style",
+                    "styles",
+                    [
+                        ".*classes",
+                        [
+                            {
+                                match: "objectValues"
+                            }
+                        ]
+                    ]
+                ]
+            }
+        },
+        rules: {
+            ...eslintPluginBetterTailwindcss.configs["recommended-warn"].rules,
+            "better-tailwindcss/enforce-consistent-line-wrapping": [
+                "warn",
+                {
+                    printWidth: 100,
+                    indent: 4,
+                    lineBreakStyle: "windows"
+                }
+            ],
+            "better-tailwindcss/no-unregistered-classes": [
+                "warn",
+                {
+                    detectComponentClasses: true
+                }
+            ]
         }
     });

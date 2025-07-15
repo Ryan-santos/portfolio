@@ -8,22 +8,33 @@
                 :checked="$colorMode.value === 'dark'"
                 @change="ColorModePreference($event)"
             >
-            <label for="check_tema_modo" class="clip_path relative z-0 block size-auto cursor-pointer bg-background-100 text-contrast text-opacity-30 [--clip:0.5rem] dark:text-opacity-30">
-                <span class="absolute inset-0 block h-full w-1/2 transition-all duration-200 ease-linear" :class="{ 'translate-x-full': $colorMode.value == 'dark' }">
-                    <span class="clip_path block size-full bg-primary [--clip:0.5rem]" />
+            <label
+                for="check_tema_modo"
+                class="
+                    relative z-0 block size-auto cursor-pointer bg-background-100 text-contrast/30
+                    clip-path-1
+                "
+            >
+                <span
+                    class="
+                        absolute inset-0 block h-full w-1/2 transition-all duration-200 ease-linear
+                    "
+                    :class="{ 'translate-x-full': $colorMode.value == 'dark' }"
+                >
+                    <span class="block size-full bg-primary clip-path-1" />
                 </span>
                 <div class="flex items-center justify-between text-lg">
                     <Icon
                         name="tabler:sun-filled"
                         class="m-1 transition-all duration-200 ease-linear"
                         size="1rem"
-                        :class="{ 'relative text-white': $colorMode.value === 'light' }"
+                        :class="{ 'relative text-light': $colorMode.value === 'light' }"
                     />
                     <Icon
                         name="akar-icons:moon-fill"
                         class="m-1 transition-all duration-200 ease-linear"
                         size="1rem"
-                        :class="{ 'relative text-white': $colorMode.value === 'dark' }"
+                        :class="{ 'relative text-light': $colorMode.value === 'dark' }"
                     />
                 </div>
             </label>

@@ -1,25 +1,64 @@
 <template>
     <div class="overflow-hidden">
-        <section id="inicio" class="relative flex h-full min-h-screen flex-row items-center" containerAnime>
+        <section
+            id="inicio"
+            class="relative flex h-full min-h-screen flex-row items-center justify-center py-16"
+            containerAnime
+        >
             <div class="absolute inset-0 -z-10">
-                <div class="absolute left-0 top-0 size-[10vw] bg-primary" anime />
-                <div class="absolute bottom-0 right-0 hidden size-[10vw] bg-primary sm:block" anime />
-                <div class="absolute inset-0 z-10 h-full backdrop-blur-[300px] sm:h-[200%]" />
+                <div
+                    class="absolute top-0 left-0 size-[10vw] bg-primary"
+                    anime
+                />
+                <div
+                    class="
+                        absolute right-0 bottom-0 hidden size-[10vw] bg-primary
+                        sm:block
+                    "
+                    anime
+                />
+                <div
+                    class="
+                        absolute inset-0 z-10 h-full backdrop-blur-[300px]
+                        sm:h-[200%]
+                    "
+                />
             </div>
-            <article class="container relative flex h-full flex-row items-center justify-center gap-12 pt-12 text-center">
+            <article
+                class="
+                    relative container flex h-full flex-row items-center justify-center gap-12 pt-12
+                    text-center
+                "
+            >
                 <div class="max-w-screen-md">
-                    <VSvg name="keys" class="mask-transparent mx-auto w-full max-w-40 [--percentage:10%]" anime />
-                    <SuperTitle class="mb-8" anime>
+                    <VSvg
+                        name="keys"
+                        class="mx-auto w-full max-w-40 mask-b-to-90%"
+                        anime
+                    />
+                    <SuperTitle
+                        class="mb-8"
+                        anime
+                    >
                         <Typing text="Desenvolvendo um novo f.u.t.u.r.o." />
                     </SuperTitle>
-                    <p class="mb-8" anime>
+                    <p
+                        class="mb-8"
+                        anime
+                    >
                         Estou aqui para ajudar você a criar produtos digitais incríveis. Vamos trabalhar juntos e construir algo verdadeiramente extraordinário! 😊
                     </p>
-                    <div class="grid auto-cols-auto grid-flow-col justify-center gap-8" anime>
+                    <div
+                        class="grid auto-cols-auto grid-flow-col justify-center gap-8"
+                        anime
+                    >
                         <Button href="#quem-sou">
                             Quem sou
                         </Button>
-                        <Button :href="linkContato" color="outline">
+                        <Button
+                            :href="linkContato"
+                            color="outline"
+                        >
                             Entrar em contato
                         </Button>
                     </div>
@@ -27,7 +66,11 @@
             </article>
         </section>
 
-        <section id="quem-sou" class="relative" containerAnime>
+        <section
+            id="quem-sou"
+            class="relative flex min-h-screen flex-col justify-center py-16"
+            containerAnime
+        >
             <div class="container">
                 <VSvg
                     name="squares"
@@ -35,30 +78,62 @@
                     filled
                     anime
                 />
-                <article class="clip_path relative z-10 mx-auto flex h-full max-w-screen-xs flex-col items-center justify-center gap-12 bg-background-100 p-6 [--clip:2rem] lg:max-w-screen-lg lg:flex-row" anime>
-                    <div class="clip_path w-full max-w-screen-xs [--clip:2rem]">
-                        <img src="/images/presentation.png" alt="Ryan" anime>
+                <article
+                    class="
+                        relative z-10 mx-auto flex h-full max-w-screen-xs flex-col items-center
+                        justify-center gap-12 bg-background-100 p-6 clip-path-8
+                        lg:max-w-screen-lg lg:flex-row
+                    "
+                    anime
+                >
+                    <div class="w-full max-w-screen-xs clip-path-8">
+                        <img
+                            src="/images/presentation.png"
+                            alt="Ryan"
+                            anime
+                        >
                     </div>
-                    <div class="w-full text-center lg:text-left">
+                    <div
+                        class="
+                            w-full text-center
+                            lg:text-left
+                        "
+                    >
                         <SuperTitle
                             aboveTitle="Óla, sou"
                             title="Ryan santos"
                             class="mb-6"
                             anime
                         />
-                        <h3 class="mb-6" anime>
+                        <h3
+                            class="mb-6"
+                            anime
+                        >
                             Desenvolvedor Front-end
                         </h3>
-                        <p class="mb-8" anime>
+                        <p
+                            class="mb-8"
+                            anime
+                        >
                             Sou apaixonado em criar aplicações web atraentes e fáceis de usar. Sou criativo e sempre estou procurando novas maneiras de melhorar minhas habilidades. Adoro aprender coisas novas e estou sempre disposto a enfrentar desafios.
                         </p>
-                        <SocialMedia anime class="justify-center lg:justify-start" />
+                        <SocialMedia
+                            anime
+                            class="
+                                justify-center
+                                lg:justify-start
+                            "
+                        />
                     </div>
                 </article>
             </div>
         </section>
 
-        <section id="conhecimentos" class="container py-24" containerAnime>
+        <section
+            id="conhecimentos"
+            class="container flex min-h-screen flex-col justify-center py-16"
+            containerAnime
+        >
             <article>
                 <SuperTitle
                     aboveTitle="Conhecimentos"
@@ -66,28 +141,68 @@
                     class="mx-auto mb-6 max-w-screen-md text-center"
                     anime
                 />
-                <p class="mb-12 text-center" anime>
-                    <Icon name="fluent:cursor-click-20-filled" size="1.5rem" class="inline-flex" />
+                <p
+                    class="mb-12 text-center"
+                    anime
+                >
+                    <Icon
+                        name="fluent:cursor-click-20-filled"
+                        size="1.5rem"
+                        class="inline-flex"
+                    />
                     Clique no card para ver mais informação
                 </p>
-                <div class="flex flex-col gap-12 lg:flex-row">
+                <div
+                    class="
+                        flex flex-col gap-12
+                        lg:flex-row
+                    "
+                >
                     <Transition
                         enterFromClass="grid grid-cols-[0fr] grid-rows-[0fr] opacity-0"
                         enterToClass="grid grid-cols-[1fr] grid-rows-[1fr] opacity-100"
                         leaveFromClass="grid grid-cols-[1fr] grid-rows-[1fr] opacity-100"
                         leaveToClass="grid grid-cols-[0fr] grid-rows-[0fr] opacity-0"
                     >
-                        <div v-show="knowledge.open" ref="knowledgeInfo" class="transition-all duration-500">
-                            <div class="clip_path w-full justify-items-start overflow-hidden bg-background-100 p-4 text-center [--clip:1.5rem] sm:p-8 lg:max-w-screen-sm lg:text-left">
-                                <div class="mb-8 flex flex-row items-center justify-center gap-6 lg:justify-start">
-                                    <Icon :name="knowledge.items[knowledge.activated!]?.icon" size="4rem" />
+                        <div
+                            v-show="knowledge.open"
+                            ref="knowledgeInfo"
+                            class="transition-all duration-500"
+                        >
+                            <div
+                                class="
+                                    w-full justify-items-start overflow-hidden bg-background-100 p-4
+                                    text-center clip-path-6
+                                    sm:p-8
+                                    lg:max-w-screen-sm lg:text-left
+                                "
+                            >
+                                <div
+                                    class="
+                                        mb-8 flex flex-row items-center justify-center gap-6
+                                        lg:justify-start
+                                    "
+                                >
+                                    <Icon
+                                        :name="knowledge.items[knowledge.activated!]?.icon"
+                                        size="4rem"
+                                    />
                                     <h1 class="font-title uppercase">
                                         {{ knowledge.items[knowledge.activated!]?.name }}
                                     </h1>
                                 </div>
-                                <div class="mb-8 flex flex-row items-center gap-6">
-                                    <hr class="w-full lg:hidden">
-                                    <h5 class="whitespace-nowrap font-bold uppercase">
+                                <div
+                                    class="mb-8 flex flex-row items-center gap-6"
+                                >
+                                    <hr
+                                        class="
+                                            w-full
+                                            lg:hidden
+                                        "
+                                    >
+                                    <h5
+                                        class="font-bold whitespace-nowrap uppercase"
+                                    >
                                         O que é?
                                     </h5>
                                     <hr class="w-full">
@@ -99,37 +214,70 @@
                                         v-if="knowledge.items[knowledge.activated!]?.link"
                                         :href="knowledge.items[knowledge.activated!]?.link"
                                         target="_blank"
-                                        class="link inline-flex flex-row items-center gap-1"
+                                        class="inline-flex flex-row items-center gap-1 link"
                                     >
-                                        <Icon name="fa6-solid:arrow-up-right-from-square" size="0.7rem" class="mr-1" /> Saiba mais
+                                        <Icon
+                                            name="fa6-solid:arrow-up-right-from-square"
+                                            size="0.7rem"
+                                            class="mr-1"
+                                        /> Saiba mais
                                     </a>
                                 </p>
-                                <div class="mb-8 flex flex-row items-center gap-6">
-                                    <hr class="w-full lg:hidden">
-                                    <h5 class="whitespace-nowrap font-bold uppercase">
+                                <div
+                                    class="mb-8 flex flex-row items-center gap-6"
+                                >
+                                    <hr
+                                        class="
+                                            w-full
+                                            lg:hidden
+                                        "
+                                    >
+                                    <h5
+                                        class="font-bold whitespace-nowrap uppercase"
+                                    >
                                         Grau de conhecimento
                                     </h5>
                                     <hr class="w-full">
                                 </div>
-                                <div class="mb-8 grid grid-flow-col">
+                                <div class="mb-8 grid w-full grid-flow-col">
                                     <div
                                         v-for="i in 5"
                                         :key="i"
-                                        class="clip_path h-4"
+                                        class="h-4 clip-path-4"
                                         :class="[
-                                            knowledge.items[knowledge.activated!]?.competence >= i ? 'bg-primary' : 'bg-primary/20',
-                                            { '[--clip-left:0]': i === 1, '[--clip-right:100%]': i === 5 }
+                                            knowledge.items[knowledge.activated!]?.competence >= i ? `
+                                                bg-primary
+                                            ` : `bg-primary/20`,
+                                            {
+                                                '[--clip-left:0]': i === 1,
+                                                '[--clip-right:100%]': i === 5
+                                            }
                                         ]"
                                     />
                                 </div>
-                                <Button class="flex flex-row" @click="knowledge.activate(false)">
+                                <Button
+                                    class="flex flex-row"
+                                    @click="knowledge.activate(false)"
+                                >
                                     <Icon name="line-md:close" />
                                     Fechar
                                 </Button>
                             </div>
                         </div>
                     </Transition>
-                    <div class="grid h-fit w-full grid-cols-2 gap-12 md:grid-cols-3" :class="knowledge.open ? 'lg:grid-cols-3 2xl:grid-cols-4' : 'lg:grid-cols-4 2xl:grid-cols-5'">
+                    <div
+                        class="
+                            grid h-fit w-full grid-cols-2 gap-12
+                            md:grid-cols-3
+                        "
+                        :class="knowledge.open ? `
+                            lg:grid-cols-3
+                            2xl:grid-cols-4
+                        ` : `
+                            lg:grid-cols-4
+                            2xl:grid-cols-5
+                        `"
+                    >
                         <div
                             v-for="value, key in knowledge.items"
                             :key="key"
@@ -137,13 +285,23 @@
                         >
                             <Button
                                 color="outline"
-                                class="w-full before:[--clip:1.5rem] after:[--clip:1.5rem]"
+                                class="
+                                    w-full
+                                    before:clip-path-6
+                                    after:clip-path-6
+                                "
                                 noPadding
                                 :activated="knowledge.activated === key && knowledge.open"
                                 @click="knowledge.activate(key)"
                             >
-                                <div class="relative flex grow flex-col items-center p-6">
-                                    <Icon v-if="value.love" name="ph:heart-fill" class="absolute right-2 top-2 text-red-600" />
+                                <div
+                                    class="relative flex grow flex-col items-center p-6"
+                                >
+                                    <Icon
+                                        v-if="value.love"
+                                        name="ph:heart-fill"
+                                        class="absolute top-2 right-2 text-red-600"
+                                    />
                                     <Icon
                                         :name="value.icon"
                                         size="5rem"
@@ -159,7 +317,11 @@
             </article>
         </section>
 
-        <section id="projetos" class="container" containerAnime>
+        <section
+            id="projetos"
+            class="container flex min-h-screen flex-col justify-center py-16"
+            containerAnime
+        >
             <article>
                 <SuperTitle
                     aboveTitle="Projetos"
@@ -172,12 +334,20 @@
                         href="https://dudomon.com"
                         target="_blank"
                         color="secondary"
-                        class="relative !p-0 text-center before:[--clip:2rem] after:[--clip:2rem]"
+                        class="
+                            relative !p-0 text-center
+                            before:clip-path-8
+                            after:clip-path-8
+                        "
                         anime
                     >
                         <div class="flex max-w-md flex-col items-center">
                             <div class="p-4">
-                                <img src="/images/projects/dudomon.jpg" alt="" class="clip_path [--clip:2rem]">
+                                <img
+                                    src="/images/projects/dudomon.jpg"
+                                    alt=""
+                                    class="clip-path-8"
+                                >
                             </div>
                             <div class="p-4">
                                 <span class="text-sm opacity-50">
@@ -190,12 +360,30 @@
                                     tecnologias
                                 </span>
                                 <div class="flex flex-row justify-center gap-4">
-                                    <Icon name="vscode-icons:file-type-nuxt" size="2rem" />
-                                    <Icon name="vscode-icons:file-type-vue" size="2rem" />
-                                    <Icon name="vscode-icons:file-type-typescript-official" size="2rem" />
-                                    <Icon name="devicon:tailwindcss" size="2rem" />
-                                    <Icon name="devicon:supabase" size="2rem" />
-                                    <Icon name="devicon:nodejs" size="2rem" />
+                                    <Icon
+                                        name="vscode-icons:file-type-nuxt"
+                                        size="2rem"
+                                    />
+                                    <Icon
+                                        name="vscode-icons:file-type-vue"
+                                        size="2rem"
+                                    />
+                                    <Icon
+                                        name="vscode-icons:file-type-typescript-official"
+                                        size="2rem"
+                                    />
+                                    <Icon
+                                        name="devicon:tailwindcss"
+                                        size="2rem"
+                                    />
+                                    <Icon
+                                        name="devicon:supabase"
+                                        size="2rem"
+                                    />
+                                    <Icon
+                                        name="devicon:nodejs"
+                                        size="2rem"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -204,12 +392,28 @@
             </article>
         </section>
 
-        <div class="container py-12" containerAnime>
-            <div class="clip_path bg-primary p-4 py-12 text-center text-white [--clip:2rem] md:px-12" anime>
-                <SuperTitle class="mb-12" anime>
+        <div
+            class="container py-12"
+            containerAnime
+        >
+            <div
+                class="
+                    bg-primary p-4 py-12 text-center text-light clip-path-8
+                    md:px-12
+                "
+                anime
+            >
+                <SuperTitle
+                    class="mb-12"
+                    anime
+                >
                     Eai? Vamos tirar esse projeto do papel?
                 </SuperTitle>
-                <Button :href="linkContato" color="white" anime>
+                <Button
+                    :href="linkContato"
+                    color="white"
+                    anime
+                >
                     Entrar em contato
                 </Button>
             </div>
@@ -347,9 +551,3 @@
         }
     });
 </script>
-
-<style scoped lang="postcss">
-    section {
-        @apply min-h-screen py-16 flex flex-col justify-center
-    }
-</style>

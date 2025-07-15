@@ -6,8 +6,18 @@
             :href="value.link"
             target="_blank"
         >
-            <Button class="p-2 before:[--clip:0.7rem] after:[--clip:0.7rem]" noPadding>
-                <Icon :name="value.icon" size="1.5rem" />
+            <Button
+                class="
+                    p-2
+                    before:!clip-path-2
+                    after:!clip-path-2
+                "
+                noPadding
+            >
+                <Icon
+                    :name="value.icon"
+                    size="1.5rem"
+                />
             </Button>
         </a>
     </div>
