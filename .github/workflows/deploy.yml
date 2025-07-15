@@ -24,11 +24,26 @@ jobs:
             - name: Build app
               run: npm run build
 
+            - name: Get version
+              id: version
+              run: |
+                  VERSION=$(node -p "require('./package.json').version")
+                  VERSION=$(echo "$VERSION" | sed 's/\./-/g')
+                  echo "VERSION=$VERSION" >> "$GITHUB_OUTPUT"
+
             - name: Deploy to Cloudflare
               env:
                 CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
                 CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
               run: |
                   npm install -g wrangler
-                  wrangler --cwd .output/ deploy
+                 
+                  BRANCH_NAME=${GITHUB_REF##*/}
+                
+                  if [ "$BRANCH_NAME" = "main" ]; then
+                    VERSION_ID=$(wrangler --cwd .output/ versions upload --tag ${{ steps.version.outputs.VERSION }} | grep -oP 'Version ID: \K[a-f0-9-]+')
+                    wrangler --cwd .output/ versions deploy $VERSION_ID
+                  else
+                    wrangler --cwd .output/ versions upload --preview-alias $BRANCH_NAME
+                  fi
         
