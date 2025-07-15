@@ -42,7 +42,7 @@ jobs:
                 
                   if [ "$BRANCH_NAME" = "main" ]; then
                     VERSION_ID=$(wrangler --cwd .output/ versions upload --tag ${{ steps.version.outputs.VERSION }} | grep -oP 'Version ID: \K[a-f0-9-]+')
-                    wrangler --cwd .output/ versions deploy $VERSION_ID
+                    wrangler --cwd .output/ versions deploy ${VERSION_ID}@100% -y
                   else
                     wrangler --cwd .output/ versions upload --preview-alias $BRANCH_NAME
                   fi
