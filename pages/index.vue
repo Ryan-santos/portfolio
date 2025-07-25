@@ -74,7 +74,7 @@
             <div class="container">
                 <VSvg
                     name="squares"
-                    class="absolute bottom-0 left-0 max-w-screen-sm"
+                    class="absolute bottom-0 left-0 max-w-screen-sm text-primary"
                     filled
                     anime
                 />

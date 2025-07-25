@@ -4,8 +4,11 @@
     --font-sans: "Urbanist";
     --font-title: "Arkhip";
 
-    --color-primary: #2250F4;
-    --color-secondary: #00DC82;
+    --color-primary-base: #2250F4;
+    --color-secondary-base: #00DC82;
+
+    --color-primary: var(--color-primary-base);
+    --color-secondary: var(--color-secondary-base);
 
     --color-light: #ffffff;
     --color-light-100: #EEEEEE;
@@ -28,6 +31,17 @@
 }
 
 @layer base {
+    :root {
+        animation: 20s linear infinite swap-colors;
+    }
+
+    @keyframes swap-colors {
+        to {
+            --color-primary: var(--color-secondary-base);
+            --color-secondary: var(--color-primary-base);
+        }
+    }
+
     *::selection {
         @apply text-light bg-primary;
     }

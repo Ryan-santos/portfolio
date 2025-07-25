@@ -21,12 +21,7 @@
                         lg:w-fit
                     "
                 >
-                    <a
-                        href="#"
-                        anime
-                    >
-                        <Logo />
-                    </a>
+                    <Logo />
                     <button
                         class="
                             relative size-10
