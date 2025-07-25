@@ -31,11 +31,15 @@
                 "
             >
                 <div class="max-w-screen-md">
-                    <VSvg
-                        name="keys"
-                        class="mx-auto w-full max-w-40 mask-b-to-90%"
+                    <span
+                        class="
+                            mx-auto flex w-fit mask-b-to-90% text-center font-title text-[15rem]
+                            leading-none tracking-[0.2em] text-primary
+                        "
                         anime
-                    />
+                    >
+                        {}
+                    </span>
                     <SuperTitle
                         class="mb-8"
                         anime
