@@ -23,19 +23,9 @@
                 >
                     <a
                         href="#"
-                        class="group w-40"
                         anime
-                        @mouseenter="logo.toggleDirection()"
-                        @mouseleave="logo.toggleDirection()"
                     >
-                        <ClientOnly>
-                            <Vue3Lottie
-                                ref="lottieLogo"
-                                animationLink="/lottie/logo.json"
-                                :loop="false"
-                                class="logo"
-                            />
-                        </ClientOnly>
+                        <Logo />
                     </a>
                     <button
                         class="
@@ -147,35 +137,6 @@
 </template>
 
 <script setup lang="ts">
-    const lottieLogo = ref();
-
-    const logo = ref({
-        direction: "forward",
-
-        play () {
-            lottieLogo.value.play();
-        },
-
-        pause () {
-            lottieLogo.value.pause();
-        },
-
-        toggleDirection () {
-            if (this.direction === "forward") {
-                this.pause();
-                lottieLogo.value.setDirection("reverse");
-                this.play();
-                this.direction = "reverse";
-            }
-            else {
-                this.pause();
-                lottieLogo.value.setDirection("forward");
-                this.play();
-                this.direction = "forward";
-            }
-        }
-    });
-
     const navbar = ref({
         open: false,
         transparent: false,
@@ -200,15 +161,5 @@
                 navbar.value.transparent = window.scrollY > 0;
             }
         }, 100));
-
-        setTimeout(() => {
-            logo.value.toggleDirection();
-        }, 5000);
     });
 </script>
-
-<style>
-    .logo path[fill="rgb(255,255,255)"] {
-        fill: currentColor;
-    }
-</style>

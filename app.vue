@@ -20,9 +20,9 @@
                         md:flex-row
                     "
                 >
-                    <div class="flex flex-row gap-4 items-end">
-                        <VSvg name="logo" />
-                        <span class="leading-none font-title text-xs">
+                    <div class="flex flex-row items-end gap-4">
+                        <Logo />
+                        <span class="font-title text-xs leading-none">
                             v{{ version }}
                         </span>
                     </div>
@@ -37,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-    import { version } from '~/package.json';
+    import { version } from "~/package.json";
 
     const elementsAnime = {
         elements: undefined as undefined | NodeListOf<HTMLDivElement>,
