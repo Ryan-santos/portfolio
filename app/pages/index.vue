@@ -31,15 +31,21 @@
                 "
             >
                 <div class="max-w-screen-md">
-                    <span
+                    <div
                         class="
-                            mx-auto flex w-fit mask-b-to-90% text-center font-title text-[15rem]
-                            leading-none tracking-[0.2em] text-primary
+                            mx-auto flex w-fit mask-b-to-90% text-center font-title text-[13rem]
+                            tracking-[0.2em] text-primary
+                            *:leading-none
                         "
                         anime
                     >
-                        {}
-                    </span>
+                        <span>
+                            {
+                        </span>
+                        <span>
+                            }
+                        </span>
+                    </div>
                     <SuperTitle
                         class="mb-8"
                         anime
