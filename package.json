@@ -24,8 +24,7 @@
         "@nuxtjs/color-mode": "^3.5.2",
         "eslint-plugin-better-tailwindcss": "^3.5.2",
         "nuxt": "^3.17.6",
-        "nuxt-lodash": "^2.5.3",
-        "vue3-lottie": "^3.3.1"
+        "nuxt-lodash": "^2.5.3"
     },
     "dependencies": {
         "@nuxt/eslint": "^1.5.2",
