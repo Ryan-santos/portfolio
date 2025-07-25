@@ -8,7 +8,6 @@ export default defineNuxtConfig({
         "@nuxt/fonts",
         "@nuxtjs/color-mode",
         "@vueuse/nuxt",
-        "nuxt-lodash",
         "nuxt-gtag",
         "@nuxt/icon"
     ],

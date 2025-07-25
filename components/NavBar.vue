@@ -95,7 +95,7 @@
                             anime
                         >
                             <a
-                                :href="`/#${useKebabCase(value)}`"
+                                :href="`/#${value.replaceAll(' ', '-').toLowerCase()}`"
                                 class="
                                     group font-medium transition-all duration-300
                                     hover:text-primary
@@ -108,7 +108,7 @@
                                         group-hover:opacity-100
                                     "
                                 > { </span>
-                                {{ useCapitalize(value) }}
+                                {{ capitalize(value) }}
                                 <span
                                     class="
                                         font-bold text-primary opacity-0 transition-all duration-300
@@ -137,6 +137,8 @@
 </template>
 
 <script setup lang="ts">
+    import { capitalize } from "vue";
+
     const navbar = ref({
         open: false,
         transparent: false,
