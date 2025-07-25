@@ -189,7 +189,7 @@ export default withNuxt()
         },
         settings: {
             "better-tailwindcss": {
-                entryPoint: "assets/css/main.css",
+                entryPoint: "app/assets/css/main.css",
                 attributes: [
                     "class",
                     "className",
