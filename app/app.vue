@@ -37,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-    import { version } from "~/package.json";
+    import { version } from "~~/package.json";
 
     const elementsAnime = {
         elements: undefined as undefined | NodeListOf<HTMLDivElement>,
